@@ -27,6 +27,7 @@ That's all: Tailwind, the fonts and the theme come with the layer. Components ar
 
 ```bash
 npm install
+npm run dev:prepare
 npm run dev        # style guide in .playground
 npm run typecheck
 ```

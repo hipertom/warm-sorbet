@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "dev": "nuxt dev .playground",
+    "dev:prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
-    "postinstall": "nuxt prepare .playground",
     "typecheck": "nuxt typecheck .playground"
   },
   "dependencies": {
