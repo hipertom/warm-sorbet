@@ -152,6 +152,11 @@ same active treatment (ink pill) on a `cream-deep` or white panel with rounded c
 **Timeline / list markers (`UiTimeline`).** 12px dots with a 4px `cream` ring. Past items `ink/30`, grouped items `sage-deep`, the
 current item `accent` with a slow glow (opacity 0.2 to 0.7 over 2.8s). Connectors are 1–3px lines; dashed means a
 break, solid `sage-deep` means continuity.
+`items` take `at`, `title` and optional `meta`; `current` marks the current item (default: the first) and `transition`
+(a short sentence) says how an item continues from the one below it, which draws the solid continuity line and a
+note with an arrow. The default slot replaces the compact text with your own content (for example a card); add
+`spacious` to align the dots with card padding, `surface="cream"` when it sits on the page instead of a white card and
+`line-style="dashed"` to show ordinary connectors as breaks.
 
 **States.**
 

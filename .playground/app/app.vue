@@ -25,6 +25,16 @@ const timeline: TimelineItem[] = [
     { at: 'Fri 9 Oct, 18:40', title: 'Out for delivery' },
     { at: 'Thu 8 Oct, 07:05', title: 'Received by the carrier' },
 ];
+const career: TimelineItem[] = [
+    { at: 'Mar 2025 – Now', title: 'Full Stack Developer', meta: 'Valicare' },
+    {
+        at: 'Oct 2021 – Feb 2025',
+        title: 'Team Lead Development',
+        meta: 'ZIGT Mediabureau',
+        transition: 'Est Digital was acquired by ZIGT.',
+    },
+    { at: 'Jan 2018 – Oct 2021', title: 'Backend Developer', meta: 'Est Digital' },
+];
 </script>
 
 <template>
@@ -135,6 +145,19 @@ const timeline: TimelineItem[] = [
                 <h3 class="mb-5 text-2xl font-semibold">Timeline</h3>
                 <UiTimeline :items="timeline" />
             </UiCard>
+        </section>
+
+        <section v-reveal class="max-w-2xl">
+            <h3 class="mb-5 text-2xl font-semibold">Timeline with cards</h3>
+            <UiTimeline :items="career" spacious surface="cream" line-style="dashed">
+                <template #default="{ item, current }">
+                    <div class="rounded-3xl p-6 sm:p-7" :class="current && 'bg-white shadow-soft ring-1 ring-ink/5'">
+                        <p class="text-sm font-semibold">{{ item.at }}</p>
+                        <p class="mt-2 text-2xl font-semibold">{{ item.title }}</p>
+                        <p class="mt-1 text-ink-soft">{{ item.meta }}</p>
+                    </div>
+                </template>
+            </UiTimeline>
         </section>
 
         <section class="grid gap-4 lg:grid-cols-3">

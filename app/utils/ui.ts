@@ -8,4 +8,8 @@ export interface TimelineItem {
     at: string;
     title: string;
     meta?: string;
+    /** Marks the current item; defaults to the first item. */
+    current?: boolean;
+    /** How this item continues from the one below it, shown as a note on a solid line. */
+    transition?: string;
 }
