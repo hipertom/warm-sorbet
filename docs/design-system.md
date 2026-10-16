@@ -139,6 +139,8 @@ and as status ("Current"). Keep the text to one or two words.
 - Primary: `bg-ink text-cream rounded-full px-6 py-3 font-medium shadow-soft`, hover lifts 2px.
 - Accent (one per screen): `bg-accent text-ink font-semibold`, same shape.
 - Secondary: `bg-white/70 ring-1 ring-ink/10 rounded-full`, hover turns `bg-ink text-cream`.
+- Inverted (secondary on an `ink` surface, such as a footer): `text-cream ring-1 ring-cream/20`, hover turns
+  `bg-cream text-ink`.
 - Action feedback: with `icon`, `loading` and `result` the icon (`UiActionIcon`) turns one bouncy lap at a time while
   busy, then a check (success) or "!" (error) rises in, rests and leaves through the top.
 

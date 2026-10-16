@@ -79,6 +79,10 @@ const career: TimelineItem[] = [
                     Refresh (fails)
                 </UiButton>
             </div>
+            <div class="flex flex-wrap items-center gap-3 rounded-3xl bg-ink p-6">
+                <UiButton variant="inverted">Inverted</UiButton>
+                <UiButton variant="inverted" size="sm">On a dark surface</UiButton>
+            </div>
             <UiSegmented
                 v-model="period"
                 label="Period"

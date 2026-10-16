@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// primary = ink, accent = one per screen, secondary = quiet. Renders a NuxtLink when `to` is given; an in-page
+// primary = ink, accent = one per screen, secondary = quiet, inverted = quiet on a dark (ink) surface. Renders a NuxtLink when `to` is given; an in-page
 // anchor (`#section`) stays a plain link so the browser scrolls to it, also in apps without pages.
 // `loading` and `result` drive the icon (UiActionIcon): bouncy laps while busy, then a check or "!".
 import type { Component } from 'vue';
@@ -13,7 +13,7 @@ const {
     loading = false,
     result = null,
 } = defineProps<{
-    variant?: 'primary' | 'accent' | 'secondary';
+    variant?: 'primary' | 'accent' | 'secondary' | 'inverted';
     size?: 'md' | 'sm';
     to?: string;
     icon?: Component;
@@ -29,6 +29,7 @@ const VARIANTS = {
     primary: 'bg-ink text-cream font-medium shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
     accent: 'bg-accent text-ink font-semibold shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
     secondary: 'bg-white/70 text-ink font-medium ring-1 ring-ink/10 hover:bg-ink hover:text-cream',
+    inverted: 'text-cream font-medium ring-1 ring-cream/20 hover:bg-cream hover:text-ink',
 };
 </script>
 
