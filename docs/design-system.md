@@ -231,14 +231,14 @@ it is not repeated here. Projects get it through the layer and have no theme of 
 
 1. Add the layer as a dependency and extend it:
 
-   ```bash
-   npm install github:hipertom/warm-sorbet#v0.1.0
-   ```
+    ```bash
+    npm install github:hipertom/warm-sorbet#v0.1.0
+    ```
 
-   ```ts
-   // nuxt.config.ts
-   export default defineNuxtConfig({ extends: ['warm-sorbet'] })
-   ```
+    ```ts
+    // nuxt.config.ts
+    export default defineNuxtConfig({ extends: ['warm-sorbet'] });
+    ```
 
 2. Do not add Tailwind, the fonts or a theme of your own: they come with the layer. Tailwind scans the project's own
    files automatically and the layer's files through an `@source` in the layer's CSS.

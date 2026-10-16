@@ -20,7 +20,8 @@ lees dat vóór elk UI-werk, in deze repo én in een project dat de layer gebrui
 
 ## Werkwijze
 
-- Codestijl: 2 spaties, geen puntkomma's, enkele quotes (zie `.editorconfig`). Code en comments in het Engels.
+- Codestijl: Spatie-stijl, net als de projecten: 4 spaties, puntkomma's, enkele quotes, regels tot 120 tekens
+  (`.editorconfig`, `.prettierrc.json`, `npm run format`). Code en comments in het Engels.
 - Draaien: `npm run dev` start de stijlgids in `.playground` (elke bouwsteen met nepdata). Een nieuwe component of
   variant krijgt daar ook een voorbeeld.
 - Controleren: `npm run typecheck`, de stijlgids bekijken, en de wijziging in de projecten die de layer gebruiken.

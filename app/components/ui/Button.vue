@@ -1,39 +1,51 @@
 <script setup lang="ts">
 // primary = ink, accent = one per screen, secondary = quiet. Renders a NuxtLink when `to` is given.
 // `loading` and `result` drive the icon (UiActionIcon): bouncy laps while busy, then a check or "!".
-import type { Component } from 'vue'
+import type { Component } from 'vue';
 
-const { variant = 'primary', size = 'md', to, icon, type = 'button', loading = false, result = null } = defineProps<{
-  variant?: 'primary' | 'accent' | 'secondary'
-  size?: 'md' | 'sm'
-  to?: string
-  icon?: Component
-  type?: 'button' | 'submit'
-  loading?: boolean
-  result?: ActionResult | null
-}>()
+const {
+    variant = 'primary',
+    size = 'md',
+    to,
+    icon,
+    type = 'button',
+    loading = false,
+    result = null,
+} = defineProps<{
+    variant?: 'primary' | 'accent' | 'secondary';
+    size?: 'md' | 'sm';
+    to?: string;
+    icon?: Component;
+    type?: 'button' | 'submit';
+    loading?: boolean;
+    result?: ActionResult | null;
+}>();
 
 // Resolved in setup: resolveComponent() inside the template renders a literal <nuxtlink> element.
-const NuxtLink = resolveComponent('NuxtLink')
+const NuxtLink = resolveComponent('NuxtLink');
 
 const VARIANTS = {
-  primary: 'bg-ink text-cream font-medium shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
-  accent: 'bg-accent text-ink font-semibold shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
-  secondary: 'bg-white/70 text-ink font-medium ring-1 ring-ink/10 hover:bg-ink hover:text-cream',
-}
+    primary: 'bg-ink text-cream font-medium shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
+    accent: 'bg-accent text-ink font-semibold shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
+    secondary: 'bg-white/70 text-ink font-medium ring-1 ring-ink/10 hover:bg-ink hover:text-cream',
+};
 </script>
 
 <template>
-  <component
-    :is="to ? NuxtLink : 'button'"
-    :to="to"
-    :type="to ? undefined : type"
-    :disabled="to ? undefined : loading"
-    :aria-busy="loading || undefined"
-    class="inline-flex items-center justify-center gap-2 rounded-full transition duration-300 ease-bounce focus-visible:rounded-full disabled:pointer-events-none"
-    :class="[VARIANTS[variant], size === 'sm' ? 'px-4 py-2 text-sm' : 'px-6 py-3', !loading && 'disabled:opacity-50']"
-  >
-    <UiActionIcon v-if="icon" :icon="icon" :loading="loading" :result="result" />
-    <slot />
-  </component>
+    <component
+        :is="to ? NuxtLink : 'button'"
+        :to="to"
+        :type="to ? undefined : type"
+        :disabled="to ? undefined : loading"
+        :aria-busy="loading || undefined"
+        class="inline-flex items-center justify-center gap-2 rounded-full transition duration-300 ease-bounce focus-visible:rounded-full disabled:pointer-events-none"
+        :class="[
+            VARIANTS[variant],
+            size === 'sm' ? 'px-4 py-2 text-sm' : 'px-6 py-3',
+            !loading && 'disabled:opacity-50',
+        ]"
+    >
+        <UiActionIcon v-if="icon" :icon="icon" :loading="loading" :result="result" />
+        <slot />
+    </component>
 </template>

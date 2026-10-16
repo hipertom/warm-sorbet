@@ -15,8 +15,8 @@ npm install github:hipertom/warm-sorbet#v0.1.0
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  extends: ['warm-sorbet'],
-})
+    extends: ['warm-sorbet'],
+});
 ```
 
 That's all: Tailwind, the fonts and the theme come with the layer. Components are auto-imported as `<UiButton>`,
