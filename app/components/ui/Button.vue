@@ -1,5 +1,6 @@
 <script setup lang="ts">
-// primary = ink, accent = one per screen, secondary = quiet. Renders a NuxtLink when `to` is given.
+// primary = ink, accent = one per screen, secondary = quiet. Renders a NuxtLink when `to` is given; an in-page
+// anchor (`#section`) stays a plain link so the browser scrolls to it, also in apps without pages.
 // `loading` and `result` drive the icon (UiActionIcon): bouncy laps while busy, then a check or "!".
 import type { Component } from 'vue';
 
@@ -35,6 +36,7 @@ const VARIANTS = {
     <component
         :is="to ? NuxtLink : 'button'"
         :to="to"
+        :external="to?.startsWith('#') || undefined"
         :type="to ? undefined : type"
         :disabled="to ? undefined : loading"
         :aria-busy="loading || undefined"
