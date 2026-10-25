@@ -145,7 +145,7 @@ and as status ("Current"). Keep the text to one or two words.
   busy, then a check (success) or "!" (error) rises in, rests and leaves through the top.
 
 **Segmented control (`UiSegmented`).** `rounded-full bg-white/70 p-1 ring-1 ring-ink/5`; the active option is `bg-ink text-cream`,
-others `text-ink-soft`. Use `aria-pressed`.
+others `text-ink-soft`. The ink pill slides to the chosen option (0.5s, gentle easing). Use `aria-pressed`.
 
 **Navigation.** A floating pill: `rounded-full bg-cream/80 backdrop-blur-md ring-1 ring-ink/10 shadow-soft p-1.5`. The
 active item is an `ink` pill with `cream` text. A circular `ink` monogram on the left. For a dashboard sidebar, use the
