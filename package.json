@@ -1,6 +1,6 @@
 {
   "name": "warm-sorbet",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Warm Sorbet: the shared design system (Nuxt layer) for Tom Grootjans' projects.",
   "type": "module",
   "main": "./nuxt.config.ts",
